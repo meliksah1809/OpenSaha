@@ -1,0 +1,131 @@
+﻿@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@model IPagedList<TakimTakvim>
+@{
+    ViewData["Title"] = "Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="~/site/images/bg-pattran.png" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Takımlar</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="">Home</a></li>
+							<li class="active">Takımlar</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<main id="tg-main" class="tg-main tg-haslayout">
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>Rakip Takımlar</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">			
+					@foreach(var tkm in Model)
+					{
+						<div class="tg-ticket">
+									<time class="tg-matchdate" datetime="2016-05-03">@tkm.TarihBaslangic.Day<span>@tkm.TarihBaslangic.ToString("MMMM")</span></time>
+									<div class="tg-matchdetail">
+										<span class="tg-theme-tag">@tkm.Kullanici.Isim @tkm.Kullanici.Soyisim</span>
+										<h4>@tkm.Takim.Baslik <span> Kadro </span> : @tkm.Takim.Kadro</h4>
+										<ul class="tg-matchmetadata">
+											
+											<li><address>@tkm.Takim.SehirListe.SehirAdi,@tkm.Takim.IlceListe.IlceAdi</address></li>
+										</ul> buralar 
+										<ul class="tg-matchmetadata">
+											<li><address><i class="fas fa-calendar-alt"></i> @tkm.TarihBaslangic.ToString("dd.MM.yyyy HH:ss") - <i class="fas fa-calendar-alt"></i> @tkm.TarihBitis.ToString("dd.MM.yyyy HH:ss")</address></li>
+										</ul>
+									</div>
+									<div class="tg-btnsbox">
+										<a class="tg-btn" data-toggle="modal" data-target="#bilgiler" href="javascript().html">Takım Hakkında</a>
+										<a class="tg-btn" href="~/Takimlar/Eslesme/@ViewBag.id">Eşleş</a>
+									</div>
+								</div>
+					}
+				@Html.PagedListPager((IPagedList)Model,page=>Url.Action("RakipBul", new { page }),
+                    new X.PagedList.Web.Common.PagedListRenderOptions()
+                    {
+                    LiElementClasses = new List<string> {"", ""},
+					PreviousElementClass="tg-prevpage",
+					ActiveLiElementClass="active",
+					NextElementClass="tg-nextpage",
+                    UlElementClasses = new List<string> {"tg-pagination"},
+                    LinkToPreviousPageFormat="<i class=\"fa fa-angle-left\"></i>",
+                    LinkToNextPageFormat="<i class=\"fa fa-angle-right\"></i>"
+                    })
+					
+	<div class="tg-modalbox modal fade" id="bilgiler" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="tg-modal-content">
+				<div class="tg-formarea">
+					<div class="tg-border-heading">
+						<h3>Saha Hakkında</h3>
+					</div>					
+					@foreach (var tbl in Model)
+					{
+						<form class="tg-loginform" method="get">
+						<fieldset>
+						<article>
+							<div class="form-group">
+								<h4>Takım Adı</h4>
+								@tbl.Takim.Baslik 
+								<hr />
+							</div>
+							</article>
+
+							<article>
+							<div class="form-group">
+								<h4>Takım Lideri</h4>
+								@tbl.Kullanici.Isim @tbl.Kullanici.Soyisim
+								<hr />
+							</div>
+							</article>	
+
+							<article>
+							<div class="form-group">
+								<h4>Kadro Sayısı</h4>
+								@tbl.Takim.Kadro
+								<hr />
+							</div>
+							</article>		
+							
+							<article>
+							<div class="form-group">
+								<h4>İl</h4>
+								@tbl.Takim.SehirListe.SehirAdi
+								<hr />
+							</div>
+							</article>		
+							
+							<article>
+							<div class="form-group">
+								<h4>İlçe</h4>
+								@tbl.Takim.IlceListe.IlceAdi  
+								<hr />
+							</div>
+							</article>				
+					</fieldset>
+					</form>
+					}
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+			</section>
+		</main>
+

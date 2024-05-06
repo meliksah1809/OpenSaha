@@ -1,0 +1,405 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = OpenSaha
+build_property.RootNamespace = OpenSaha
+build_property.ProjectDir = C:\Users\Acer\Desktop\C#\OpenSaha\OpenSaha\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Acer\Desktop\C#\OpenSaha\OpenSaha
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Cafe/Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FmZVxGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Cafe/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FmZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Ekipmanlar/Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRWtpcG1hbmxhclxGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Ekipmanlar/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRWtpcG1hbmxhclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Kullanici/Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS3VsbGFuaWNpXEZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Kullanici/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS3VsbGFuaWNpXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Kullanici/KullaniciGuncelle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS3VsbGFuaWNpXEt1bGxhbmljaUd1bmNlbGxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Kullanici/Puan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS3VsbGFuaWNpXFB1YW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Kullanici/TakimGuncelle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS3VsbGFuaWNpXFRha2ltR3VuY2VsbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Kullanici/Takimlar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS3VsbGFuaWNpXFRha2ltbGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Puan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHVhblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Rezervasyon/Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmV6ZXJ2YXN5b25cRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Rezervasyon/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmV6ZXJ2YXN5b25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Sahalar/Cafe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2FoYWxhclxDYWZlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Sahalar/Ekipmanlar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2FoYWxhclxFa2lwbWFubGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Sahalar/Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2FoYWxhclxGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Sahalar/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2FoYWxhclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Sahalar/Rezervasyon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2FoYWxhclxSZXplcnZhc3lvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Sahalar/Stoklar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2FoYWxhclxTdG9rbGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Slider/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2xpZGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Stoklar/Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3Rva2xhclxGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Stoklar/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3Rva2xhclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Stoklar/StokEkle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3Rva2xhclxTdG9rRWtsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Takimlar/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGFraW1sYXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/Yonetim/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcWW9uZXRpbVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Cafe/Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xDYWZlXEZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Cafe/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xDYWZlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Ekipmanlar/Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xFa2lwbWFubGFyXEZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Ekipmanlar/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xFa2lwbWFubGFyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Odeme/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xPZGVtZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Rezervasyon/CafeDuzenle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xSZXplcnZhc3lvblxDYWZlRHV6ZW5sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Rezervasyon/CafeTakip.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xSZXplcnZhc3lvblxDYWZlVGFraXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Rezervasyon/EkipmanDuzenle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xSZXplcnZhc3lvblxFa2lwbWFuRHV6ZW5sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Rezervasyon/EkipmanRez.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xSZXplcnZhc3lvblxFa2lwbWFuUmV6LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Rezervasyon/EkipmanSil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xSZXplcnZhc3lvblxFa2lwbWFuU2lsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Rezervasyon/Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xSZXplcnZhc3lvblxGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Rezervasyon/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xSZXplcnZhc3lvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Rezervasyon/Odeme.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xSZXplcnZhc3lvblxPZGVtZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Rezervasyon/Sil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xSZXplcnZhc3lvblxTaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Sahalar/Cafe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xTYWhhbGFyXENhZmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Sahalar/deneme.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xTYWhhbGFyXGRlbmVtZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Sahalar/Ekipmanlar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xTYWhhbGFyXEVraXBtYW5sYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Sahalar/form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xTYWhhbGFyXGZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Sahalar/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xTYWhhbGFyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Sahalar/Rezervasyon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xTYWhhbGFyXFJlemVydmFzeW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Sahalar/SahaResim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xTYWhhbGFyXFNhaGFSZXNpbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/Sahalar/Stoklar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xTYWhhbGFyXFN0b2tsYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/StokTakip/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xTdG9rVGFraXBcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Areas/Kontrol/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29udHJvbFxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Hakkimizda/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFra2ltaXpkYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Hata404/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGF0YTQwNFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Kayit/GirisYap.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F5aXRcR2lyaXNZYXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Kayit/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F5aXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Kayit/KayitOl.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F5aXRcS2F5aXRPbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Maclar/Maclar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFjbGFyXE1hY2xhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Profil/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Profil/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Profil/MusaitGunler.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsXE11c2FpdEd1bmxlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Profil/MusaitGunlerim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsXE11c2FpdEd1bmxlcmltLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Profil/Randevular.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsXFJhbmRldnVsYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Profil/Sifre.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsXFNpZnJlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Profil/TakimGuncelle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsXFRha2ltR3VuY2VsbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Profil/Takimlarim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsXFRha2ltbGFyaW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Profil/TakimOlustur.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsXFRha2ltT2x1c3R1ci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Randevu/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFuZGV2dVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Randevu/Randevularım.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFuZGV2dVxSYW5kZXZ1bGFyxLFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Sahalar/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FoYWxhclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Sahalar/Rezervasyonlar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FoYWxhclxSZXplcnZhc3lvbmxhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Shared/Components/AdminPanel/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWRtaW5QYW5lbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Shared/Components/HizliRez/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGl6bGlSZXpcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Shared/Components/KontrolPanel/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcS29udHJvbFBhbmVsXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Shared/Components/PartialFiltre/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUGFydGlhbEZpbHRyZVxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Shared/Components/PartialLogin/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUGFydGlhbExvZ2luXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Shared/Components/ProfilRandevu/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUHJvZmlsUmFuZGV2dVxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Shared/Components/RezKontrol/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUmV6S29udHJvbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Shared/Components/SiteFooter/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2l0ZUZvb3RlclxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Shared/Components/SiteMenu/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2l0ZU1lbnVcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Shared/Components/SliderArea/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2xpZGVyQXJlYVxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Shared/Components/UserMenu/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVXNlck1lbnVcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Shared/_KontrolLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Lb250cm9sTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Takimlar/Eslesme.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFraW1sYXJcRXNsZXNtZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Takimlar/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFraW1sYXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Takimlar/RakipBul.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFraW1sYXJcUmFraXBCdWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Takimlar/TakimOlustur.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFraW1sYXJcVGFraW1PbHVzdHVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Takimlar/TakimTakvim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFraW1sYXJcVGFraW1UYWt2aW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Acer/Desktop/C\#/OpenSaha/OpenSaha/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-51qrgi7pud

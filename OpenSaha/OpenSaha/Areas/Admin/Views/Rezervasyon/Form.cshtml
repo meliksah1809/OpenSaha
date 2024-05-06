@@ -1,0 +1,134 @@
+﻿@model OpenSaha.Models.Rezervasyon
+@{
+    ViewData["Title"] = "Form";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Rezervasyon Güncelle</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">DataTables</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">       
+       <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Rezervasyon ;</h3>
+              </div>             
+              <form action="~/admin/Rezervasyon/form" method="post">
+                <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-3">   
+                  <div class="form-group">
+                    <label>Kullanıcı Adı</label> 
+                    <select class="form-control" asp-for="KullaniciId" placeholder="Kullanıcı Adı" asp-items="@ViewBag.dgr" ></select>
+                  </div>                  
+                  <div class="form-group">
+                    <input type="hidden" class="form-control" asp-for="Id">
+                  </div> 
+                  <div class="form-group">
+                    <label>Randevu Başlangıç Tarihi</label> 
+                    <input type="datetime-local" class="form-control" asp-for="RandevuBaslangic" placeholder="Randevu Başlangıç Tarihi">
+                  </div>               
+                  <div class="form-group">
+                    <label>Eşleşme</label> 
+                    <input type="text" class="form-control" asp-for="EslesmeId" placeholder="Eşleşme">
+                  </div>                 
+                 </div>
+                     <div class="col-md-3">     
+                  <div class="form-group">
+                    <label>Yönetici</label> 
+                    <select class="form-control" asp-for="YoneticiId" asp-items="@ViewBag.dgrr"></select>
+                  </div> 
+                  <div class="form-group">
+                    <label>saha</label> 
+                    <select class="form-control" asp-for="SahaId" asp-items="@ViewBag.sha"></select>
+                  </div> 
+                  <div class="form-group">
+                    <label>Randevu Bitiş Tarihi</label> 
+                    <input type="datetime-local" class="form-control" asp-for="RandevuBitis" placeholder="Randevu Bitiş Tarihi">
+                  </div>  
+                        <div class="form-group">
+                    <label>Durumı</label>
+                    <select class="form-control" asp-for="Durum">
+                        <option value="0">İptal</option>
+                        <option value="1">Bekleme</option>
+                        <option value="2">Onaylandı</option>
+                    </select>
+                    </div>    
+                     </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Güncelle</button>
+                </div>
+              </form>
+            </div>            
+        </div>
+       </div>
+      </div>
+    </section>
+
+                                        @section Scripts{
+
+                                            <script type="text/javascript">
+        $(function () {
+            $("#ddlSehirler").each(function () {
+                if ($(this).find("option").length <= 1) {
+                    $(this).attr("disabled", "disabled");
+                }
+            });
+
+            $("#ddlSehirler").change(function () {
+                var value = 0;
+                if ($(this).val() != "") {
+                    value = $(this).val();
+                }
+                var id = $(this).attr("id");
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("SehirAjax","Home", new { Area=""})",
+                    data: { value: value, type: id },
+                    success: function (response) {
+                        switch (id) {
+                            case "ddlSehirler":
+                                DisableDropDown("#ddlIlceler");
+                                PopulateDropDown("#ddlIlceler", response.ilce);
+                                break;
+                        }
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+        });
+        function DisableDropDown(dropDownId) {
+            $(dropDownId).attr("disabled", "disabled");
+            $(dropDownId).empty().append('<option selected="selected" value="0">Seçiniz</option>');
+        }
+        function PopulateDropDown(dropDownId, list) {
+            if (list != null && list.length > 0) {
+                $(dropDownId).removeAttr("disabled");
+                $.each(list, function () {
+                    $(dropDownId).append($("<option></option>").val(this['value']).html(this['text']));
+                });
+            }
+        }
+    </script>
+                                      }

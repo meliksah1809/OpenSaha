@@ -1,0 +1,330 @@
+﻿@model OpenSaha.Models.Takim
+
+@{
+    ViewData["Title"] = "Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="~/site/images/bg-pattran.png" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Takım Oluştur</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">Takım Oluştur</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<main id="tg-main" class="tg-main tg-haslayout">
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>Takımın Oluştur</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<div class="tg-topratedplayer tg-haslayout">
+								<div class="row">
+									<div class="col-md-7 col-sm-12 col-xs-12">
+						<form method="post" action="" class="register-form" id="register-form">
+								<div class="form-group">
+								<label for="phone">
+									<i class="zmdi zmdi-phone"></i></label>
+									<input
+									type="text" name="Baslik"  placeholder="Takım Adı" />
+							</div>
+							<div class="form-group">
+								<label for="email"><i class="zmdi zmdi-email"></i></label> 
+								<input type="text" name="Kadro"  placeholder="Oyuncu Sayısı" />
+							</div>
+							<div class="form-group">
+								<label for="email"><i class="zmdi zmdi-email"></i></label> 
+							<input type="hidden" name="KullaniciId"  placeholder="kullanici ıd Sayısı" value="@ViewBag.userid"/>
+							</div>	
+								@*@Html.DropDownListFor(x=>x.SehirListe.Id,(List<SelectListItem>)ViewBag.sehir)*@	
+							<div class="form-group">
+								<select id="ddlSehirler" asp-for="SehirId" asp-items="ViewBag.Sehir" tabindex="1">
+														<option value="">Seçiniz</option>
+								</select>
+							</div>
+            				<div class="form-group">
+								<select id="ddlIlceler" asp-for="IlceId" asp-items="ViewBag.Ilce" tabindex="2">
+														<option value="">Önce Şehir Seçiniz</option>
+								</select>
+							</div>
+@*							<div class="form-group">
+								<label for="re-password"><i class="zmdi zmdi-lock-outline"></i></label>
+								<input type="password" name="re_password" id="re_password"
+									placeholder="Repeat your password" />
+							</div>*@
+							<div class="form-group">
+                                     <label for="agree-term"
+									class="label-agree-term"><span><span></span></span>Hizmet şartlarındaki tüm ifadiyorum <a href="#" class="term-service">Hizmet Şartları</a></label>
+							<input type="checkbox" name="agree-term" id="agree-term"
+									class="agree-term" />
+								</div>
+							<div class="form-group form-button">
+								<input type="submit" name="signup" id="signup"
+									class="tg-btn" value="Kaydet" />
+								</div>	
+						</form>
+	                    	</div>
+					<div class="signup-image col-sm-5 col-xs-5 pull-right">
+						<figure>
+							<img src="~/login/images/img-03.jpg" alt="sing up image">
+						</figure>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="tg-testimonial tg-haslayout tg-bgdark">
+				<div class="container">
+					<div class="row">
+						<div id="tg-testimonial-slider" class="tg-testimonial-slider tg-haslayout">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<figure>
+										<img src="~/site/images/trophy.png" alt="image description">
+									</figure>
+									<div class="tg-contentbox">
+										<div class="tg-section-heading">
+											<h2>Takım oluştur nedir ?</h2>
+										</div>
+										<div class="tg-description">
+											<p>Takım oluşturun amacı; kullanıcıların, takımlar oluşturarak pratik bir şekilde birbirleri ile maçlar düzenleyebilmesini sağlar. Peki bunu nasıl yapabilirsin?<br /><br /> 1) Öncelikle aranızda belirlediğiniz takım liderinin yukarıdaki bilgileri doldurarak takım oluşturması gerekiyor.<br />2) Takım oluşturulduktan sonra takımınızı diğer kullanıcılara sunmuş oluyorsunuz bu sayede diğer takımlar ile iletişime geçerek ortak maçlar ayarlayabileceksiniz.<br /><br />Sizde diğer kullanıcıların takımlarını görmek için RakipBul butonuna basabilirsiniz. </p>
+										</div>
+										<div class="tg-btnbox">
+											<a class="tg-btn" href="/Takim/TakimBul"><span>RakipBul</span></a>
+										</div>										
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<img src="~/site/images/trophy.png" alt="image description">
+									</figure>
+									<div class="tg-contentbox">
+										<div class="tg-section-heading">
+											<h2>şampiyonlar ligi, 2023</h2>
+										</div>
+										<div class="tg-description">
+											<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolorena aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur sint occaecat.</p>
+										</div>
+										<ul class="tg-socialicons">
+											<li>
+												<a href="#">
+													<i class="fa fa-facebook"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-twitter"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-linkedin"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fa fa-dribbble"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="tg-themebtnprev"><span class="fa fa-angle-left"></span></div>
+							<div class="tg-themebtnnext"><span class="fa fa-angle-right"></span></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>Sponsorlarımız</h2>
+					</div>
+					<div class="col-sm-11 col-xs-11 pull-right">
+						<div class="row">
+							<div class="tg-latestresult tg-oursponsers">
+								<div class="row">
+									<div class="col-md-5 col-sm-12 col-xs-12">
+										<div class="tg-contentbox">
+											<div class="tg-section-heading"><h2>consectetur adipisicing elit sedia tempor labore</h2></div>
+											<div class="tg-description">
+												<p>Consectetur adipisicing elit sed do eiusmod temport incididunt utia labore et dolore magna aliqua enima ad minim veniam quistrud on ullamco laboris nisiut aliquip ex ea commodo consequat.</p>
+											</div>
+											<div class="tg-btnbox">
+												<a class="tg-btn" href="#"><span>view all</span></a>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-7 col-sm-12 col-xs-12">
+										<div id="tg-upcomingmatch-slider" class="tg-upcomingmatch-slider tg-upcomingmatch">
+											<div class="swiper-wrapper">
+												<div class="swiper-slide">
+													<div class="tg-match">
+														<div class="tg-matchdetail">
+															<div class="tg-box">
+																<strong class="tg-teamlogo">
+																	<img src="~/site/images/sponser/img-01.png" alt="image description">
+																</strong>
+															</div>
+															<div class="tg-box">
+																<span>sponsored in 2016</span>
+																<h3>Champions league</h3>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="tg-match">
+														<div class="tg-matchdetail">
+															<div class="tg-box">
+																<strong class="tg-teamlogo">
+																	<img src="~/site/images/sponser/img-02.png" alt="image description">
+																</strong>
+															</div>
+															<div class="tg-box">
+																<span>sponsored in 2016</span>
+																<h3>Champions league</h3>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="tg-match">
+														<div class="tg-matchdetail">
+															<div class="tg-box">
+																<strong class="tg-teamlogo">
+																	<img src="~/site/images/sponser/img-03.png" alt="image description">
+																</strong>
+															</div>
+															<div class="tg-box">
+																<span>sponsored in 2016</span>
+																<h3>Champions league</h3>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="tg-match">
+														<div class="tg-matchdetail">
+															<div class="tg-box">
+																<strong class="tg-teamlogo">
+																	<img src="~/site/images/sponser/img-01.png" alt="image description">
+																</strong>
+															</div>
+															<div class="tg-box">
+																<span>sponsored in 2016</span>
+																<h3>Champions league</h3>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="tg-match">
+														<div class="tg-matchdetail">
+															<div class="tg-box">
+																<strong class="tg-teamlogo">
+																	<img src="~/site/images/sponser/img-02.png" alt="image description">
+																</strong>
+															</div>
+															<div class="tg-box">
+																<span>sponsored in 2016</span>
+																<h3>Champions league</h3>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-slide">
+													<div class="tg-match">
+														<div class="tg-matchdetail">
+															<div class="tg-box">
+																<strong class="tg-teamlogo">
+																	<img src="~/site/images/sponser/img-03.png" alt="image description">
+																</strong>
+															</div>
+															<div class="tg-box">
+																<span>sponsored in 2016</span>
+																<h3>Champions league</h3>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="tg-themebtnnext"><span class="fa fa-angle-down"></span></div>
+											<div class="tg-themebtnprev"><span class="fa fa-angle-up"></span></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+	                                        @section Scripts{
+
+                                            <script type="text/javascript">
+        $(function () {
+            $("#ddlSehirler").each(function () {
+                if ($(this).find("option").length <= 1) {
+                    $(this).attr("disabled", "disabled");
+                }
+            });
+
+            $("#ddlSehirler").change(function () {
+                var value = 0;
+                if ($(this).val() != "") {
+                    value = $(this).val();
+                }
+                var id = $(this).attr("id");
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("SehirAjax","Home", new { Area=""})",
+                    data: { value: value, type: id },
+                    success: function (response) {
+                        switch (id) {
+                            case "ddlSehirler":
+                                DisableDropDown("#ddlIlceler");
+                                PopulateDropDown("#ddlIlceler", response.ilce);
+                                break;
+                        }
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+        });
+        function DisableDropDown(dropDownId) {
+            $(dropDownId).attr("disabled", "disabled");
+            $(dropDownId).empty().append('<option selected="selected" value="0">Seçiniz</option>');
+        }
+        function PopulateDropDown(dropDownId, list) {
+            if (list != null && list.length > 0) {
+                $(dropDownId).removeAttr("disabled");
+                $.each(list, function () {
+                    $(dropDownId).append($("<option></option>").val(this['value']).html(this['text']));
+                });
+            }
+        }
+    </script>
+                                      }

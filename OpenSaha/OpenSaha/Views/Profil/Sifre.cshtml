@@ -1,0 +1,73 @@
+﻿@model  OpenSaha.ViewModels.Account.SifreDegistir
+
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="~/site/images/bg-pattran.png" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Oyuncu Detayları</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="/Home/Index/">Home</a></li>
+							<li class="active">Oyuncu Profili</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<main id="tg-main" class="tg-main tg-haslayout">
+			<div class="container">
+				<div class="row">
+					<div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">
+						<div class="col-sm-9 col-xs-12 pull-left">
+							<div class="tg-player-detail tg-haslayout">
+								<div class="tg-player-data tg-haslayout">
+									<div class="tg-player-info tg-haslayout">
+										<div class="row">
+											<div class="col-sm-12 col-xs-12">
+												<div class="tg-playcontent">
+													<div class="col-md-9">
+													<h3>Şifre Güncelle</h3>
+													</div>
+													<div class="col-md-3">
+													</div>
+													@*<span class="tg-stars"><span></span></span>*@
+												</div>
+												<div class="tg-widget tg-catagories-widget">
+													<ul class="tg-postmetadata">
+														<li>Mevcut Şifre :</li>
+														<li>
+															<input asp-for="OldPassword" class="form-control" />
+															<span asp-validation-for="OldPassword" class="text-danger"></span>
+														</li>
+														<li>Yeni Şifre :</li>
+														<li>
+															<input asp-for="PasswordNew" class="form-control" />
+															<span asp-validation-for="PasswordNew" class="text-danger"></span></li>
+														<li>Yeni Şifre(Tekrar) :</li>
+														<li>
+															<input asp-for="PasswordConfirm" class="form-control" />
+															<span asp-validation-for="PasswordConfirm" class="text-danger"></span></li>
+														<li>&nbsp;</li>
+														<li><button class="tg-btn" type="submit">Kaydet</button></li>
+													</ul>													
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3 col-xs-12">
+							@await Component.InvokeAsync("UserMenu")
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		@section Scripts{<partial name="_ValidationScriptsPartial"/> 
+		}

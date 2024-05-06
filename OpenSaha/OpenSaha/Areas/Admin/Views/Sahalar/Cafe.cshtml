@@ -1,0 +1,119 @@
+﻿@model List<OpenSaha.Models.Cafe>
+@{
+    ViewData["Title"] = "Cafe";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Cafeler</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">DataTables</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Cafeler Listesi</h3>
+              </div>
+              <div class="card-body">
+                    <div class="card-body">
+                  <div class="row">
+                      <div class="col-md-2 offset-md-10">
+              <a href="~/admin/cafe/form/0" class="btn btn-block btn-primary text-end">Yeni Ekle</a>
+                      </div>
+                  </div>
+                <table id="Datatablo" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th width="5%"><i class="nav-icon fas fa-coffee"></i></th>
+                    <th>Başlık</th>
+                    <th>Fiyat</th>
+                    <th>Adet</th>
+                    <th>Tarih</th>
+                    <th>Güncelleme Tarihi</th>
+                    <th>Stoklu</th>
+                    <th>Code</th>
+                    <th>Act</th>
+                  </tr>
+                  </thead>
+                @foreach(var tkm in Model)
+                {
+                    <tbody>
+                    <tr>
+                    <td> <a href="~/admin/Cafe/form/@tkm.Id" class="btn btn-block btn-outline-info"><i class="fas fa-edit"></i></a> </td>
+                    <td>@tkm.Baslik</td>
+                    <td>@tkm.Fiyat</td>
+                    <td>@tkm.Adet</td>
+                    <td>@tkm.Tarih</td>
+                    <td>@tkm.GuncellemeTarih</td>
+                    <td>@tkm.Stoklu.ToString()</td>
+                    <td>@tkm.YoneticiId</td>
+                    <td>@tkm.Act.ToString()</td>
+                    </tr>
+                    </tbody>
+                }
+                  <tfoot>
+                  <tr>
+                    <th width="5%"><i class="nav-icon fas fa-coffee"></i></th>
+                    <th>Başlık</th>
+                    <th>Fiyat</th>
+                    <th>Adet</th>
+                    <th>Tarih</th>
+                    <th>Güncelleme Tarihi</th>
+                    <th>Stoklu</th>
+                    <th>Code</th>
+                    <th>Act</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+           </div>
+         </div>
+        </div>
+       </div>
+      </section>
+                @section Heads{
+<link rel="stylesheet" href="~/Admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="~/Admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="~/Admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+}
+@section Scripts{
+<script src="~/Admin/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/Admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="~/Admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="~/Admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="~/Admin/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="~/Admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="~/Admin/plugins/jszip/jszip.min.js"></script>
+<script src="~/Admin/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="~/Admin/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="~/Admin/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="~/Admin/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="~/Admin/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+       <script>
+$(function () {
+    $('#Datatablo').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+}

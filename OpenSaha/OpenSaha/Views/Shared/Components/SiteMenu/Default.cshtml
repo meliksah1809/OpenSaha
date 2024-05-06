@@ -1,0 +1,314 @@
+﻿
+@*Site Menu*@
+@{
+	bool girisYapmismi = ViewBag.girisYapmis;
+}
+<script src="~/login/js/sweetalert2.all.min.js"></script>
+<link href="~/login/css/sweetalert2.min.css" rel="stylesheet" />
+<a href="~/lib/jquery/dist/jquery.min.map"></a>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<div id="tg-navigationm-mobile" class="tg-navigationm-mobile tg-navigation collapse navbar-collapse">
+			<span id="tg-close" class="tg-close fa fa-close"></span>
+			<div class="tg-colhalf">
+				<ul>
+					<li class="active menu-item-has-children">
+						<a href="#">Ana Sayfa</a>
+						<ul class="tg-dropdown-menu">
+							<li class="active"><a href="index-2.html">h</a></li>
+							<li><a href="index2.html">home2</a></li>
+						</ul>
+					</li>
+					<li class="menu-item-has-children">
+						<a href="#">team</a>
+						<ul class="tg-dropdown-menu">
+							<li><a href="playergrid-v1.html">playergrid-v1</a></li>
+							<li><a href="playergrid-v2.html">playergrid-v2</a></li>
+							<li><a href="playerdetail.html">playergrid detail</a></li>
+						</ul>
+					</li>
+					<li><a href="buyticket.html">Buy Tickets</a></li>
+					<li class="menu-item-has-children">
+						<a href="#">Match Results</a>
+						<ul class="tg-dropdown-menu">
+							<li><a href="matchresult.html">match result</a></li>
+							<li><a href="matchresultdetail.html">match result detail</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="tg-colhalf">
+				<ul>
+					<li class="menu-item-has-children">
+						<a href="#">fixtures</a>
+						<ul class="tg-dropdown-menu">
+							<li><a href="fixtures.html">fixtures</a></li>
+							<li><a href="fixturedetail.html">fixture detail</a></li>
+						</ul>
+					</li>
+					<li class="menu-item-has-children">
+						<a href="#">pro soccer media</a>
+						<ul class="tg-dropdown-menu">
+							<li><a href="soccermedia-1.html">pro soccer media1</a></li>
+							<li><a href="soccermedia-2.html">pro soccer media2</a></li>
+						</ul>
+					</li>
+					<li><a href="contactus.html">Contact</a></li>
+					<li class="menu-item-has-children">
+						<a href="#"><i class=" fa fa-navicon"></i></a>
+						<ul>
+							<li><a href="aboutus.html">about us</a></li>
+							<li><a href="shoplist.html">shop list</a></li>
+							<li><a href="shopgrid.html">shop grid</a></li>
+							<li><a href="productsingle.html">shop detail</a></li>
+							<li><a href="bloglist.html">blog list</a></li>
+							<li><a href="bloggrid.html">blog grid</a></li>
+							<li><a href="blogdetail.html">blog detail</a></li>
+							<li><a href="404.html">404 error</a></li>
+							<li><a href="comming-soon.html">comming soon</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+		
+		<header id="tg-header" class="tg-header tg-haslayout">
+			<div class="container">
+				<div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+					<div class="row">
+						<div class="tg-topbar tg-haslayout">
+							<nav id="tg-topaddnav" class="tg-topaddnav">
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-addnavigationm-mobile">
+										<i class="fa fa-arrow-right"></i>
+									</button>
+								</div>
+								<div id="tg-addnavigationm-mobile" class="tg-addnavigationm-mobile collapse navbar-collapse">
+									<div class="tg-colhalf pull-right">
+										<nav class="tg-addnav">
+											<ul>
+												@if (!girisYapmismi)
+												{
+													<li><a href="#" data-toggle="modal" data-target="#tg-uyelik">Üyelik</a></li>
+													@*<li><a href="#" data-toggle="modal" data-target="#tg-register">Kayıt Ol</a></li>*@
+												}
+												else
+												{
+											<li><a href="~/profil">Profil</a></li>
+											<li><a href="~/logout">Çıkış Yap</a></li>
+
+												}
+												<li>
+													<a id="tg-btn-search" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+							</nav>
+						</div>
+						<nav id="tg-nav" class="tg-nav brand-center">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigationm-mobile">
+									<i class="fa fa-bars"></i>
+								</button>
+								<strong class="tg-logo">
+									<a asp-controller="Home" asp-action="Index"><img src="~/site/images/logo.png" alt="Anasayfa"></a>
+								</strong>
+							</div>
+							<div id="tg-navigation" class="tg-navigation">
+								<div class="tg-colhalf">
+                                    <ul>
+                                        <li class="active">
+                                            <a asp-controller="Home" asp-action="Index" >Ana Sayfa</a>
+                                        </li>
+										@if (girisYapmismi)
+										{
+											<li>
+												<a href="/Takimlar">Takımlar</a>
+												<ul class="tg-dropdown-menu">
+													<li><a class="nav-link text-dark" asp-controller="Takimlar" asp-action="TakimOlustur">Takım Oluştur</a></li>
+													<li><a asp-controller="Takimlar" asp-action="RakipBul" >Rakip Takım Bul</a></li>
+
+												</ul>
+											</li>
+										}
+										
+                                    </ul>
+                                </div>								
+                                <div class="tg-colhalf">
+                                    <ul>
+                                        <li>
+                                            <a href="~/Sahalar">Sahalar</a>
+                                        </li>
+										@if (girisYapmismi)
+										{
+											<li class="active">
+													<a asp-controller="Takimlar" asp-action="RakipBul" >Rakip Bul</a>
+											</li>			
+
+											<li>
+												  <a href="#"><i class=" fa fa-navicon"></i></a> 
+												<ul>
+													<li><a href="/profil">Profil</a></li>
+													<li><a href="/hakkimizda">Hakkımızda</a></li>
+													<li><a href="productsingle.html">shop</a></li>
+													<li><a href="/hata404">404 error</a></li>
+												 <li><a href="/kayit/LogOut">Çıkış Yap</a></li>
+												</ul>
+											</li>
+										}
+
+                                    </ul>									
+                                </div>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+
+		</header>  
+
+	<!--************************************
+		LightBoxes Star
+	*************************************-->
+		<div class="tg-modalbox modal fade" id="tg-uyelik" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="tg-modal-content">
+				<div class="tg-formarea">
+					<div class="tg-border-heading">
+						<h3>Giriş Yap</h3>
+					</div>
+					<form class="tg-loginform" method="post" id="login-form" asp-action="index" asp-controller="login">
+						<fieldset>
+							<div class="form-group">
+								<input type="text" name="EmailPhone"  class="form-control" placeholder="E-Posta veya Telefon">
+							</div>
+							<div class="form-group">
+								<input type="password" name="Password" class="form-control" placeholder="Şifre">
+							</div>
+							<div class="form-group">
+								<a href="~/login/forgetpassword">
+									<em>Şifremi unuttum</em>
+									<i class="fa fa-question-circle"></i>
+								</a>
+							</div>
+							<div class="form-group">
+								<button class="tg-btn tg-btn-lg" type="submit">Giriş Yap</button>
+							</div>
+							@*<div class="tg-description">
+								<p>Hesabınız Yok Mu? <a href="#" onclick="kayitOl()">Kayit Ol</a></p>
+							</div>*@
+						</fieldset>
+					</form>
+				</div>
+				<div class="tg-logintype">
+					<div class="tg-border-heading">
+						<h3>Kayıt Ol</h3>
+					</div>
+					<form class="tg-loginform" method="post" asp-action="index" asp-controller="register">
+						<fieldset>
+							<div class="form-group">
+								<input type="text" name="Isim" class="form-control" placeholder="İsim" autocomplete="off">
+								@*<span asp-validation-for="Isim" class="text-danger"></span>*@
+							</div>
+							<div class="form-group">
+								<input type="text" name="Soyisim" class="form-control" placeholder="Soyisim" autocomplete="off">
+							</div>
+							<div class="form-group">
+								<input type="tel" name="Telefon" class="form-control" placeholder="Telefon" autocomplete="off">
+							</div>
+							<div class="form-group">
+								<input type="email" name="Email" class="form-control" placeholder="E-Posta" autocomplete="off">
+							</div>
+							<div class="form-group">
+								<input type="password" name="Password" class="form-control" placeholder="Şifre" autocomplete="off">
+							</div>
+							<div class="form-group">
+								<button class="tg-btn tg-btn-lg" id="kayit" type="submit">Kayıt Ol</button>
+							</div>
+							@*<div class="tg-description">
+								<p>Zaten Bir Hesabınız Var mı? <a href="#" onclick="girisYap()">Giriş Yap</a></p>
+							</div>*@
+					</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+		<script>
+$('#kayit').click(function(){
+   Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: 'Your work has been saved',
+  showConfirmButton: false,
+  timer: 1500
+})
+});
+	</script>
+	@*<div class="tg-modalbox modal fade" id="tg-register" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="tg-modal-content">
+				<div class="tg-formarea">
+					<div class="tg-border-heading">
+						<h3>Kayıt Ol</h3>
+					</div>
+					<form class="tg-loginform" method="post" asp-action="~/kayit">
+						<fieldset>
+							<div class="form-group">
+								<input type="text" name="Isim" class="form-control" placeholder="İsim" autocomplete="off">
+							</div>
+							<div class="form-group">
+								<input type="text" name="Soyisim" class="form-control" placeholder="Soyisim" autocomplete="off">
+							</div>
+							<div class="form-group">
+								<input type="tel" name="Telefon" class="form-control" placeholder="Telefon" autocomplete="off">
+							</div>
+							<div class="form-group">
+								<input type="email" name="Email" class="form-control" placeholder="E-Posta" autocomplete="off">
+							</div>
+							<div class="form-group">
+								<input type="password" name="Password" class="form-control" placeholder="Şifre" autocomplete="off">
+							</div>
+						<div class="form-group">
+								<button class="tg-btn tg-btn-lg" type="submit">Kayıt Ol</button>
+							</div>
+							<div class="tg-description">
+								<p>Zaten Bir Hesabınız Var mı? <a href="#" onclick="girisYap()">Giriş Yap</a></p>
+							</div>
+					</fieldset>
+					</form>
+				</div>
+				<div class="tg-logintype">
+					<div class="tg-border-heading">
+						<h3>Signup with</h3>
+					</div>
+					<ul>
+						<li class="tg-facebook"><a href="#">facebook</a></li>
+						<li class="tg-twitter"><a href="#">twitter</a></li>
+						<li class="tg-googleplus"><a href="#">google+</a></li>
+						<li class="tg-linkedin"><a href="#">linkedin</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+*@
+		<!--************************************
+		LightBoxes End
+	*************************************-->
+
+@*<script>
+	function kayitOl(){
+		$('#tg-login').modal('hide');
+		$('#tg-register').modal('show');
+	}
+	function girisYap(){
+		$('#tg-register').modal('hide');
+		$('#tg-login').modal('show');
+	}
+</script>*@

@@ -1,0 +1,115 @@
+﻿@model OpenSaha.ViewModels.Konrtol.KontrolOdemeViewModel
+@{
+    ViewData["Title"] = "Odeme";
+    Layout = "~/Views/Shared/_KontrolLayout.cshtml";
+}
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Ödemeyi İşlemleri</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">DataTables</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-success">
+                    <div class="card-header">
+                        <h3 class="card-title">Ödeme ;</h3>
+                    </div>
+                    <form action="~/kontrol/Rezervasyon/Sil" method="post">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Randevu Oluşturan</label>
+                                        <input type="text" class="form-control" asp-for="Kullanici" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Saha Ücreti</label>
+                                        <input type="text" class="form-control" asp-for="SahaUcret" placeholder="Eşleşme" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Kafe Ücreti</label>
+                                        <input type="text" class="form-control" asp-for="KafeUcret" placeholder="Eşleşme" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Ekipman Ücreti</label>
+                                        <input type="text" class="form-control" asp-for="EkipmanUcret" placeholder="Eşleşme" readonly />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="hidden" class="form-control" asp-for="RezervasyonId" placeholder="Eşleşme" readonly>
+                                        <input type="hidden" class="form-control" asp-for="YoneticiId" placeholder="Eşleşme" readonly>
+                                        <input type="hidden" class="form-control" asp-for="SahaId" placeholder="Eşleşme" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Rezervasyonu İptal Et</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+    <script type="text/javascript">
+        $(function () {
+            $("#ddlSehirler").each(function () {
+                if ($(this).find("option").length <= 1) {
+                    $(this).attr("disabled", "disabled");
+                }
+            });
+            $("#ddlSehirler").change(function () {
+                var value = 0;
+                if ($(this).val() != "") {
+                    value = $(this).val();
+                }
+                var id = $(this).attr("id");
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("SehirAjax","Home", new { Area=""})",
+                    data: { value: value, type: id },
+                    success: function (response) {
+                        switch (id) {
+                            case "ddlSehirler":
+                                DisableDropDown("#ddlIlceler");
+                                PopulateDropDown("#ddlIlceler", response.ilce);
+                                break;
+                        }
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+        });
+        function DisableDropDown(dropDownId) {
+            $(dropDownId).attr("disabled", "disabled");
+            $(dropDownId).empty().append('<option selected="selected" value="0">Seçiniz</option>');
+        }
+        function PopulateDropDown(dropDownId, list) {
+            if (list != null && list.length > 0) {
+                $(dropDownId).removeAttr("disabled");
+                $.each(list, function () {
+                    $(dropDownId).append($("<option></option>").val(this['value']).html(this['text']));
+                });
+            }
+        }
+    </script>
+                 }

@@ -1,0 +1,76 @@
+﻿@model List<OpenSaha.Models.Odeme>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_KontrolLayout.cshtml";
+}
+<section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Ödeme</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">DataTables</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Yapılan Ödemeler Listesi</h3>
+              </div>
+              <div class="card-body">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th><i class="fas fa-user"></i> Ödeme Yapan</th>
+                    <th><i class="fas fa-futbol"></i> Saha Ücreti</th>
+                    <th><i class="fas fa-shopping-basket"></i> Kafe Ücreti</th>
+                    <th><i class="fas fa-tshirt"></i> Ekipman Ücreti</th>
+                     <th><i class="fas fa-cash-register"></i> Toplam Ücret</th>
+                    <th><i class="fas fa-money-check-alt"></i> Odeme Tipi</th>
+                    <th><i class="fas fa-calendar-check"></i> Ödeme Tarihi</th>                    
+                  </tr>
+                  </thead>
+               @foreach (var tkm in Model)                          
+                {
+                    var toplam = tkm.SahaUcret + tkm.KafeUcret + tkm.EkipmanUcret;
+                    <tbody>
+                    <tr>
+                    <td>@tkm.Rezervasyon.Kullanici.Isim  @tkm.Rezervasyon.Kullanici.Soyisim</td>
+                    <td>@tkm.SahaUcret</td>
+                    <td>@tkm.KafeUcret</td>
+                    <td>@tkm.EkipmanUcret</td>
+                    <td>@toplam</td>
+                    <td>@tkm.OdemeTipleri</td>
+                    <td>@tkm.Rezervasyon.RandevuBitis</td>
+                    </tr>
+                    </tbody>
+                }
+                  <tfoot>
+                  <tr>
+                    <th><i class="fas fa-user"></i> Ödeme Yapan</th>
+                    <th><i class="fas fa-futbol"></i> Saha Ücreti</th>
+                    <th><i class="fas fa-shopping-basket"></i> Kafe Ücreti</th>
+                    <th><i class="fas fa-tshirt"></i> Ekipman Ücreti</th>
+                     <th><i class="fas fa-cash-register"></i> Toplam Ücret</th>
+                    <th><i class="fas fa-money-check-alt"></i> Odeme Tipi</th>
+                    <th><i class="fas fa-calendar-check"></i> Ödeme Tarihi</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+       </div>
+      </section>
+

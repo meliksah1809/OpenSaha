@@ -1,0 +1,85 @@
+﻿@model OpenSaha.Models.Kullanici
+@{
+    ViewData["Title"] = "KullaniciGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+            <div class="card card-info">
+              <div class="card-header">
+                <h3 class="card-title">Input Addon</h3>
+              </div>
+              <form action="~/admin/kullanici/kullaniciGuncelle" method="post">
+              <div class="card-body">
+                   <div class="row">
+                      <div class="col-md-4">
+                          <label>Kullanıcı Tipi</label>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user-cog"></i></span>               
+                    <select class="form-control" asp-for="UserType">
+                        <option value="0">Kullanıcı</option>
+                        <option value="1">Yönetici</option>
+                        <option value="2">Saha Yöneticisi</option>
+                    </select>
+                  </div>                
+                      <label>İsim</label>
+                  <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                  </div>
+                  <input type="text" class="form-control" asp-for="Isim" placeholder="İsim">
+                </div>
+                <label>Soyisim</label>
+                   <div class="input-group mb-3">                                         
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user-plus"></i></span>
+                  </div>
+                  <input type="text" class="form-control" asp-for="Soyisim" placeholder="Soyisim">
+                </div>
+                <label>YöneticiId</label>
+                   <div class="input-group mb-3">                                         
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user-plus"></i></span>
+                  </div>
+                  <input type="text" class="form-control" asp-for="YoneticiId" placeholder="YöneticiId">
+                </div>
+                </div>
+                 <div class="col-md-4">
+                      <label>Telefon</label>
+                   <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                  </div>
+                  <input type="tel" class="form-control" asp-for="Telefon" placeholder="Telefon">
+                </div>
+                <input type="hidden" class="form-control" asp-for="Id" >
+                      <label>E-Posta</label>
+                   <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                  </div>
+                  <input type="email" class="form-control" asp-for="Email" placeholder="Email">
+                </div>
+                        <label>Şifre</label>
+                    <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                  </div>
+                  <input type="password" class="form-control" asp-for="Password" placeholder="Şifre">
+                </div>
+                          <label>Act</label>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user-cog"></i></span>               
+                    <select class="form-control" asp-for="Act">
+                        <option value="0">Silinmiş</option>
+                        <option value="1">Aktif</option>
+                    </select>
+                  </div> 
+                   </div>
+                      </div>
+                    </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Güncelle</button>
+                </div>
+                    </form>
+              </div>
+
+

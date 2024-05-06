@@ -1,0 +1,178 @@
+﻿@using X.PagedList;
+@using X.PagedList.Mvc.Core
+@model IPagedList<Saha>	
+@{
+	bool girisYapmismi = ViewBag.girisYapmis;
+    ViewData["Title"] = "Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/login/js/sweetalert2.all.min.js"></script>
+<link rel="stylesheet" href="~/login/css/sweetalert2.min.css"  />
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="~/site/images/bg-pattran.png" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Sahalarımız</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">Sahalar</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<main id="tg-main" class="tg-main tg-haslayout">
+			<div class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="row">
+						<div class="tg-section-name">
+							<h2>Sahalar</h2>
+						</div>
+						<div id="tg-twocolumns" class="tg-twocolumns tg-haslayout">
+							<div class="col-sm-11 col-xs-11 pull-right">
+								<div class="row">
+									<div class="col-md-9 col-sm-8 col-xs-12 pull-left">
+										<div class="tg-blogpost tg-blogpostgrid">
+										@foreach(var saha in Model)
+										{
+										<div class="col-md-6 col-sm-12 col-xs-12">
+											<article class="tg-post">
+												<figure class="tg-postimg">
+													<a href="javascript().html" data-toggle="modal" data-target="#bilgiler">
+														<img src="~/site/images/blog/img-03.jpg" alt="image description">
+													</a>
+													<figcaption>
+													<ul class="tg-postmetadata">
+															<li><a href="javascript().html" data-toggle="modal" data-target="#bilgiler">@saha.SehirListe.SehirAdi</a></li>
+															<li><a href="javascript().html" data-toggle="modal" data-target="#bilgiler">@saha.IlceListe.IlceAdi</a></li>
+															@*<li><a href="javascript().html" data-toggle="modal" data-target="#bilgiler">@saha.Baslik</a></li>*@
+														</ul>
+													</figcaption>
+												</figure>												
+												<div class="tg-posttitle"><h3><a href="javascript().html" data-toggle="modal" data-target="#bilgiler">@saha.Baslik</a></h3></div>
+												<div class="tg-description">
+													<p>@Html.Raw(saha.Aciklama)</p>
+												</div>														
+											@if (!girisYapmismi)
+											{
+												<div class="tg-border-heading">
+													<button class="tg-btn tg-btn-lg uyeGirisYapHata">Randavu Oluştur</button><br /><br />
+												</div>
+											}
+											else
+											{
+												<div class="tg-border-heading">
+													<a class="tg-btn tg-btn-lg" href="/Sahalar/Rezervasyonlar/@saha.Id">Randevu Oluştur</a><br /><br />
+												</div>													
+											}
+											</article>
+										</div>
+									}
+								</div>
+                    @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index", new { page }),
+                    new X.PagedList.Web.Common.PagedListRenderOptions()
+                    {
+                    LiElementClasses = new List<string> {"", ""},
+					PreviousElementClass="tg-prevpage",
+					ActiveLiElementClass="active",
+					NextElementClass="tg-nextpage",
+                    UlElementClasses = new List<string> {"tg-pagination"},
+                    LinkToPreviousPageFormat="<i class=\"fa fa-angle-left\"></i>",
+                    LinkToNextPageFormat="<i class=\"fa fa-angle-right\"></i>"
+                    })
+										@*@Html.PagedListPager((IPagedList)Model,page =>Url.Action("Saha",new{page}))*@
+										<div class="mt-5">
+										@*<ul class="tg-pagination">
+											<li class="tg-prevpage"><a href=""><i class="fa fa-angle-left"></i></a></li>
+											<li class="active"><a href="#">4</a></li>
+											<li><a href="#">6</a></li>
+											<li class="tg-nextpage"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+										</ul>*@
+										</div>
+									</div>
+								@*	@await Component.InvokeAsync("PartialFiltre")*@
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+			<div class="tg-modalbox modal fade" id="bilgiler" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="tg-modal-content">
+				<div class="tg-formarea">
+					<div class="tg-border-heading">
+						<h3>Saha Hakkında</h3>
+					</div>
+					@foreach (var tbl in Model)
+					{
+						<form class="tg-loginform" method="get">
+						<fieldset>
+						<article>
+							<div class="form-group">
+								<h4>İl</h4>
+								@tbl.SehirListe.SehirAdi
+								<hr />
+							</div>
+							</article>
+
+							<article>
+							<div class="form-group">
+								<h4>İlÇE</h4>
+								@tbl.IlceListe.IlceAdi
+								<hr />
+							</div>
+							</article>	
+
+							<article>
+							<div class="form-group">
+								<h4>Açık Saha Adeti</h4>
+								@*@tbl.AcikSahaAdet*@
+								<hr />
+							</div>
+							</article>		
+							
+							<article>
+							<div class="form-group">
+								<h4>Kapalı Saha Adeti</h4>
+								@*@tbl.KapaliSahaAdet*@
+								<hr />
+							</div>
+							</article>		
+							
+							<article>
+							<div class="form-group">
+								<h4>Özellikleri</h4>
+								@tbl.Ozellik
+								<hr />
+							</div>
+							</article>				
+					</fieldset>
+					</form>
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+		</main>
+	@section Scripts {
+		<script>
+			$('.uyeGirisYapHata').click(function(){
+			Swal.fire({
+			icon:'error',
+				title:'Oops...',
+				text:'Rezervasyon oluşturabilmek için giriş yapmanız gerekiyor!',
+				footer:'<a href="">Giriş Yap?</a>'
+				});
+			});															
+		</script>
+			}

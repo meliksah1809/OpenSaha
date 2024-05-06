@@ -1,0 +1,87 @@
+﻿@model List<OpenSaha.Models.Kullanici>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Kullanıcılar</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">DataTables</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Kullanıcılar Listesi</h3>
+              </div>
+              <div class="card-body">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th width ="5%">Güncelle</th>
+                    <th>İsim</th>
+                    <th>Soyisim</th>
+                    <th>Telefon</th>
+                    <th>E-Posta</th>
+                    <th>Kullanıcı Tipi</th>
+                    <th>Act</th>
+                  </tr>
+                  </thead>
+                @foreach(var tkm in Model)
+                {
+                    <tbody>
+                    <tr>
+                    <td>
+                         <div class="btn-group">
+                     <a href="~/admin/Kullanici/KullaniciGuncelle/@tkm.Id"class="btn btn-block btn-info"><i class="fas fa-pencil-alt"></i></a>
+                    <button type="button" class="btn btn-outline-info dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu" role="menu" style=""> 
+                      <a class="dropdown-item" href="~/Admin/kullanici/Takimlar/@tkm.Id">Takımları</a>
+                     <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="~/Admin/kullanici/Puan/@tkm.Id">Puan</a>
+                    </div>
+                  </div>                       
+                       </td>  
+                    <td>@tkm.Isim</td>
+                    <td>@tkm.Soyisim</td>
+                    <td>@tkm.Telefon</td>
+                    <td>@tkm.Email</td>
+                    <td>@tkm.UserType.ToString()</td>
+                    <td>@tkm.Act.ToString()</td>                
+                    </tr>
+                    </tbody>
+                }
+                  <tfoot>
+                  <tr>
+                    <th>Güncelle</th>
+                    <th>İsim</th>
+                    <th>Soyisim</th>
+                    <th>Telefon</th>
+                    <th>E-Posta</th>
+                    <th>Kullanıcı Tipi</th>
+                    <th>Act</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+           </div>
+         </div>
+        </div>
+      </section>
+

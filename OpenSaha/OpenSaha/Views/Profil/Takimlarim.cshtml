@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Takimlarim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<Takim>
+<body>
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="~/site/images/bg-pattran.png" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Takımlarım</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li class="active">Takımlarım</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<main id="tg-main" class="tg-main tg-haslayout">
+
+	<section class="tg-main-section tg-haslayout">
+		<div class="container">
+			<div class="tg-section-name">
+				<h2>Takımlarım</h2>
+			</div>
+			<div class="col-sm-11 col-xs-11 pull-right">
+				<div class="row">
+					<div class="tg-topratedplayer tg-haslayout">
+						<div class="row">
+							<div class="col-md-7 col-sm-12 col-xs-12">
+								<div id="tg-playerscrollbar" class="tg-players tg-playerscrollbar">
+										@foreach(var tkm in Model)
+										{
+										<div class="tg-player">
+										<div class="col-sm-6 col-xs-6 pull-right">
+											<div class="tg-playcontent">
+												<a class="tg-theme-tag" href="#">@tkm.Kullanici.Isim @tkm.Kullanici.Soyisim</a>
+												<h3><a href="#">@tkm.Baslik</a></h3>
+												<span class="tg-stars"><span></span></span>
+												<div class="tg-description">
+													<p>Lider: @tkm.Kullanici.Isim</p>
+													<p>Şehir: @tkm.SehirListe.SehirAdi</p>
+													<p>İlçe: @tkm.IlceListe.IlceAdi</p>
+													<p>Kadro Sayısı: @tkm.Kadro</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-6 col-xs-6">
+											<figure>
+												<a href="~/profil/TakimGuncelle/@tkm.Id">
+													<img src="~/site/images/player/img-03.png" alt="image description">
+												</a>
+											</figure>
+										</div>
+									</div>											
+										}
+								</div>
+							</div>
+							<div class="col-sm-3 col-xs-12">
+							@await Component.InvokeAsync("UserMenu")
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+</body>
+		@section Scripts{<partial name="_ValidationScriptsPartial"/> 
+		}

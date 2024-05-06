@@ -1,0 +1,218 @@
+﻿@using X.PagedList;
+@using X.PagedList.Mvc.Core
+@model  IPagedList<Rezervasyon>
+
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="~/site/images/bg-pattran.png" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Oyuncu Detayları</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="/Home/Index/">Home</a></li>
+							<li class="active">Oyuncu Profili</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<main id="tg-main" class="tg-main tg-haslayout">
+			<div class="container">
+				<div class="row">
+					<div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">
+						<div class="col-sm-9 col-xs-12 pull-left">
+							<div class="tg-player-detail tg-haslayout">
+								<div class="tg-player-data tg-haslayout">
+									<div  class="row">
+										<div class="col-md-12">
+											<div class="tg-playcontent">
+													<h3>Rezervasyon</h3>
+												</div>
+					@foreach(var tkm in Model)
+					{
+						<div class="tg-ticket">
+									<time class="tg-matchdate" datetime="2016-05-03">@tkm.RandevuBaslangic.Day<span>@tkm.RandevuBaslangic.ToString("MMMM")</span></time>
+									<div class="tg-matchdetail">
+										<span class="tg-theme-tag">@tkm.Kullanici.Isim @tkm.Kullanici.Soyisim</span>
+										<h4>@tkm.Saha.Baslik</h4>
+										<ul class="tg-matchmetadata">											
+										<li><address><i class="far fa-calendar-alt"></i> @tkm.RandevuBaslangic.ToString("dd.MM.yyyy HH:ss") - <i class="fas fa-calendar-alt"></i> @tkm.RandevuBitis.ToString("dd.MM.yyyy HH:ss")</address></li>
+										</ul>
+									</div>
+									<div class="tg-btnsbox">
+												<a class="tg-btn" href="~/Profil/RezervasyonSil/@tkm.Id">Sil</a>
+									</div>
+								</div>
+					}
+								</div>
+							</div>
+	                @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Randevular", new { page }),
+                    new X.PagedList.Web.Common.PagedListRenderOptions()
+                    {
+                    LiElementClasses = new List<string> {"", ""},
+					PreviousElementClass="tg-prevpage",
+					ActiveLiElementClass="active",
+					NextElementClass="tg-nextpage",
+                    UlElementClasses = new List<string> {"tg-pagination"},
+                    LinkToPreviousPageFormat="<i class=\"fa fa-angle-left\"></i>",
+                    LinkToNextPageFormat="<i class=\"fa fa-angle-right\"></i>"
+                    })				
+@*									<div class="tg-themetabs">
+										<ul class="tg-themetabnav" role="tablist">
+											<li role="presentation" class="active">
+												<a href="#recentvictories" aria-controls="recentvictories" role="tab" data-toggle="tab">Son Zaferler</a>
+											</li>
+											<li role="presentation">
+												<a href="#recentdefeat" aria-controls="recentdefeat" role="tab" data-toggle="tab">Son Mağlubiyetler</a>
+											</li>
+											<li role="presentation">
+												<a href="#earlierstats" aria-controls="earlierstats" role="tab" data-toggle="tab">Geçmiş İstatisikler</a>
+											</li>
+										</ul>
+										<div class="tab-content tg-themetabcontent">
+											<div role="tabpanel" class="tab-pane active" id="recentvictories">
+												<div class="tg-oldmatchresult">
+													<time class="tg-matchdate" datetime="2016-05-13">27<span>june</span></time>
+													<div class="tg-matchdetail">
+														<span class="tg-theme-tag">English Premier League</span>
+														<h4>Lumberjacks <span>10 - 5</span> Killer Whales</h4>
+														<address>Soccer Stadium, Dubai</address>
+													</div>
+												</div>
+												<div class="tg-oldmatchresult">
+													<time class="tg-matchdate" datetime="2016-05-13">27<span>june</span></time>
+													<div class="tg-matchdetail">
+														<span class="tg-theme-tag">English Premier League</span>
+														<h4>Lumberjacks <span>4 - 5</span> Killer Whales</h4>
+														<address>Soccer Stadium, Dubai</address>
+													</div>
+												</div>
+												<div class="tg-oldmatchresult">
+													<time class="tg-matchdate" datetime="2016-05-13">27<span>june</span></time>
+													<div class="tg-matchdetail">
+														<span class="tg-theme-tag">English Premier League</span>
+														<h4>Lumberjacks <span>4 - 15</span> Killer Whales</h4>
+														<address>Soccer Stadium, Dubai</address>
+													</div>
+												</div>
+												<div class="tg-oldmatchresult">
+													<time class="tg-matchdate" datetime="2016-05-13">27<span>june</span></time>
+													<div class="tg-matchdetail">
+														<span class="tg-theme-tag">English Premier League</span>
+														<h4>Lumberjacks <span>14 - 15</span> Killer Whales</h4>
+														<address>Soccer Stadium, Dubai</address>
+													</div>
+												</div>
+												<div class="tg-oldmatchresult">
+													<time class="tg-matchdate" datetime="2016-05-13">27<span>june</span></time>
+													<div class="tg-matchdetail">
+														<span class="tg-theme-tag">English Premier League</span>
+														<h4>Lumberjacks <span>4 - 5</span> Killer Whales</h4>
+														<address>Soccer Stadium, Dubai</address>
+													</div>
+												</div>
+											</div>
+											<div role="tabpanel" class="tab-pane" id="recentdefeat">
+												<div class="tg-oldmatchresult">
+													<time class="tg-matchdate" datetime="2016-05-13">27<span>june</span></time>
+													<div class="tg-matchdetail">
+														<span class="tg-theme-tag">English Premier League</span>
+														<h4>Lumberjacks <span>5 - 1</span> Killer Whales</h4>
+														<address>Soccer Stadium, Dubai</address>
+													</div>
+												</div>
+												<div class="tg-oldmatchresult">
+													<time class="tg-matchdate" datetime="2016-05-13">27<span>june</span></time>
+													<div class="tg-matchdetail">
+														<span class="tg-theme-tag">English Premier League</span>
+														<h4>Lumberjacks <span>2 - 5</span> Killer Whales</h4>
+														<address>Soccer Stadium, Dubai</address>
+													</div>
+												</div>
+												<div class="tg-oldmatchresult">
+													<time class="tg-matchdate" datetime="2016-05-13">27<span>june</span></time>
+													<div class="tg-matchdetail">
+														<span class="tg-theme-tag">English Premier League</span>
+														<h4>Lumberjacks <span>6 - 5</span> Killer Whales</h4>
+														<address>Soccer Stadium, Dubai</address>
+													</div>
+												</div>
+												<div class="tg-oldmatchresult">
+													<time class="tg-matchdate" datetime="2016-05-13">27<span>june</span></time>
+													<div class="tg-matchdetail">
+														<span class="tg-theme-tag">English Premier League</span>
+														<h4>Lumberjacks <span>4 - 1</span> Killer Whales</h4>
+														<address>Soccer Stadium, Dubai</address>
+													</div>
+												</div>
+												<div class="tg-oldmatchresult">
+													<time class="tg-matchdate" datetime="2016-05-13">27<span>june</span></time>
+													<div class="tg-matchdetail">
+														<span class="tg-theme-tag">English Premier League</span>
+														<h4>Lumberjacks <span>8 - 5</span> Killer Whales</h4>
+														<address>Soccer Stadium, Dubai</address>
+													</div>
+												</div>
+											</div>
+											<div role="tabpanel" class="tab-pane" id="earlierstats">
+												<div class="tg-oldmatchresult">
+													<time class="tg-matchdate" datetime="2016-05-13">27<span>june</span></time>
+													<div class="tg-matchdetail">
+														<span class="tg-theme-tag">English Premier League</span>
+														<h4>Lumberjacks <span>10 - 5</span> Killer Whales</h4>
+														<address>Soccer Stadium, Dubai</address>
+													</div>
+												</div>
+												<div class="tg-oldmatchresult">
+													<time class="tg-matchdate" datetime="2016-05-13">27<span>june</span></time>
+													<div class="tg-matchdetail">
+														<span class="tg-theme-tag">English Premier League</span>
+														<h4>Lumberjacks <span>4 - 15</span> Killer Whales</h4>
+														<address>Soccer Stadium, Dubai</address>
+													</div>
+												</div>
+												<div class="tg-oldmatchresult">
+													<time class="tg-matchdate" datetime="2016-05-13">27<span>june</span></time>
+													<div class="tg-matchdetail">
+														<span class="tg-theme-tag">English Premier League</span>
+														<h4>Lumberjacks <span>4 - 5</span> Killer Whales</h4>
+														<address>Soccer Stadium, Dubai</address>
+													</div>
+												</div>
+												<div class="tg-oldmatchresult">
+													<time class="tg-matchdate" datetime="2016-05-13">27<span>june</span></time>
+													<div class="tg-matchdetail">
+														<span class="tg-theme-tag">English Premier League</span>
+														<h4>Lumberjacks <span>2 - 2</span> Killer Whales</h4>
+														<address>Soccer Stadium, Dubai</address>
+													</div>
+												</div>
+												<div class="tg-oldmatchresult">
+													<time class="tg-matchdate" datetime="2016-05-13">27<span>june</span></time>
+													<div class="tg-matchdetail">
+														<span class="tg-theme-tag">English Premier League</span>
+														<h4>Lumberjacks <span>0 - 5</span> Killer Whales</h4>
+														<address>Soccer Stadium, Dubai</address>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+*@					
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3 col-xs-12">
+							@await Component.InvokeAsync("UserMenu")
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		@section Scripts{<partial name="_ValidationScriptsPartial"/> 
+		}

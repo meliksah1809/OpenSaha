@@ -1,0 +1,19 @@
+﻿@using X.PagedList;
+@using X.PagedList.Mvc.Core
+@model  IPagedList<Rezervasyon>
+
+
+@foreach(var tkm in Model)
+{
+	<div class="tg-ticket">
+				<time class="tg-matchdate" datetime="2016-05-03">@tkm.RandevuBaslangic.Day<span>@tkm.RandevuBaslangic.ToString("MMMM")</span></time>
+				<div class="tg-matchdetail">
+					<span class="tg-theme-tag">@tkm.Kullanici.Isim @tkm.Kullanici.Soyisim</span>
+					<h4>@tkm.Saha.Baslik</h4>
+					<ul class="tg-matchmetadata">
+											
+					<li><address><i class="far fa-calendar-alt"></i> @tkm.RandevuBaslangic.ToString("dd.MM.yyyy HH:ss") - <i class="fas fa-calendar-alt"></i> @tkm.RandevuBitis.ToString("dd.MM.yyyy HH:ss")</address></li>
+					</ul>
+				</div>
+			</div>
+}

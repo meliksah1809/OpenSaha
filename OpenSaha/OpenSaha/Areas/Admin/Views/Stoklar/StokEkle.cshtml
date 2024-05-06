@@ -1,0 +1,57 @@
+﻿@model OpenSaha.Models.Cafe
+@{
+    ViewData["Title"] = "StokEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+        <div class="card card-warning">
+        <div class="card-header">
+        <h3 class="card-title">Input Addon</h3>
+        </div>
+        <form action="~/admin/kullaniciekle/index" method="post">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">               
+                <label>Başlık</label>
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-clipboard-list"></i></span>
+            </div>
+            <input type="text" class="form-control" asp-for="Baslik" placeholder="İsim">
+        </div>
+        <label>Adet</label>
+            <div class="input-group mb-3">                                         
+            <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-plus"></i></span>
+            </div>
+            <input type="text" class="form-control" asp-for="Adet" placeholder="Soyisim">
+        </div>                
+                <label>Fiyat</label>
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+            </div>
+            <input type="text" class="form-control"  asp-for="Fiyat" placeholder="Telefon">
+        </div>
+                <label>Tarih</label>
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+            </div>
+            <input type="datetime-local" class="form-control" asp-for="Tarih" placeholder="">
+        </div>
+            </div>
+                </div>
+            </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Ekle</button>
+        </div>
+            </form>
+        </div>
+
+
+
+
+
+
+
+      

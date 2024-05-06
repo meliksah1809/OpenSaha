@@ -1,0 +1,86 @@
+﻿@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@model IPagedList<TakimTakvim>
+@{
+    ViewData["Title"] = "MusaitGunlerim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="~/site/images/bg-pattran.png" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Oyuncu Detayları</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="/Home/Index/">Home</a></li>
+							<li class="active">Oyuncu Profili</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<main id="tg-main" class="tg-main tg-haslayout">
+			<section class="tg-main-section tg-haslayout">
+				<div class="container">
+					<div class="tg-section-name">
+						<h2>Müsait Günlerim</h2>
+					</div>
+					<div class="col-sm-8 col-xs-11 pull-right">
+						<div class="row">			
+				@foreach(var tkm in Model)
+					{
+						<div class="tg-ticket">
+									<time class="tg-matchdate" datetime="2016-05-03">@tkm.TarihBaslangic.Day<span>@tkm.TarihBaslangic.ToString("MMMM")</span></time>
+									<div class="tg-matchdetail">
+										<span class="tg-theme-tag">@tkm.Kullanici.Isim @tkm.Kullanici.Soyisim</span>
+										<h4>@tkm.Takim.Baslik <span> Kadro </span> : @tkm.Takim.Kadro</h4>
+										<ul class="tg-matchmetadata">											
+											<li><address>@tkm.Takim.SehirListe.SehirAdi,@tkm.Takim.IlceListe.IlceAdi</address></li>
+										</ul>
+										<ul class="tg-matchmetadata"> 
+										<li><address><i class="fas fa-calendar-alt"></i> @tkm.TarihBaslangic.ToString("dd.MM.yyyy HH:ss") - <i class="fas fa-calendar-alt"></i> @tkm.TarihBitis.ToString("dd.MM.yyyy HH:ss")</address></li>
+										</ul>
+									</div>
+									<div class="tg-btnsbox">
+										<a class="tg-btn" href="/profil/MusaitSil/@tkm.Id">Sil</a>
+									</div>
+								</div>
+					}
+
+				@Html.PagedListPager((IPagedList)Model,page=>Url.Action("MusaitGunlerim", new { page }),
+                    new X.PagedList.Web.Common.PagedListRenderOptions()
+                    {
+                    LiElementClasses = new List<string> {"", ""},
+					PreviousElementClass="tg-prevpage",
+					ActiveLiElementClass="active",
+					NextElementClass="tg-nextpage",
+                    UlElementClasses = new List<string> {"tg-pagination"},
+                    LinkToPreviousPageFormat="<i class=\"fa fa-angle-left\"></i>",
+                    LinkToNextPageFormat="<i class=\"fa fa-angle-right\"></i>"
+                    }) 				
+							<div class="tg-modalbox modal fade" id="bilgiler" tabindex="-1" role="dialog">
+								<div class="modal-dialog" role="document">
+									<div class="tg-modal-content">
+										<div class="tg-formarea">
+											<div class="tg-border-heading">
+												<h3>Saha Hakkında</h3>
+											</div>	
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3 col-xs-12 pull-right">
+					@await Component.InvokeAsync("UserMenu")
+					</div>
+				</div>
+			</section>
+		</main>
+				@section Scripts{<partial name="_ValidationScriptsPartial"/> 
+		}

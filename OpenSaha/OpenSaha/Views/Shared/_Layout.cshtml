@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zxx"> <![endif]-->
+<!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang="zxx"> <![endif]-->
+<!--[if IE 8]>			<html class="no-js lt-ie9" lang="zxx"> <![endif]-->
+<!--[if gt IE 8]><!-->	<html class="no-js" lang="zxx"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication1</title>
+    <meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<link rel="stylesheet" href="~/site/css/bootstrap.min.css">
+	<link rel="stylesheet" href="~/site/css/normalize.css">
+	<link rel="stylesheet" href="~/site/css/font-awesome.min.css">
+	<link rel="stylesheet" href="~/site/css/transitions.css">
+	<link rel="stylesheet" href="~/site/css/prettyPhoto.css">
+	<link rel="stylesheet" href="~/site/css/swiper.min.css">
+	<link rel="stylesheet" href="~/site/css/jquery-ui.css">
+	<link rel="stylesheet" href="~/site/css/animate.css">
+	<link rel="stylesheet" href="~/site/css/owl.theme.css">
+	<link rel="stylesheet" href="~/site/css/owl.carousel.css">
+	<link rel="stylesheet" href="~/site/css/customScrollbar.css">
+	<link rel="stylesheet" href="~/site/css/icomoon.css">
+	<link rel="stylesheet" href="~/site/css/main.css">
+	<link rel="stylesheet" href="~/site/css/color.css">
+	<link rel="stylesheet" href="~/site/css/responsive.css">
+	<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    @await RenderSectionAsync("Heads", required: false)
+</head>
+<body>
+    <div id="tg-wrapper" class="tg-wrapper tg-haslayout">
+		
+		
+		
+
+
+		
+
+
+
+			@await Component.InvokeAsync("SiteMenu")
+
+            @RenderBody()
+
+
+
+
+
+			@await Component.InvokeAsync("SiteFooter")
+
+		</div>
+
+<div class="tg-searchbox">
+		<a id="tg-close-search" class="tg-close-search" href="javascript:void(0)"><span class="fa fa-close"></span></a>
+		<div class="tg-searcharea">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 col-sm-offset-3">
+						<form class="tg-form-search">
+							<fieldset>
+								<input type="search" class="form-control" placeholder="keyword">
+								<i class="icon-icon_search2"></i>
+							</fieldset>
+						</form>
+						<p>Start typing and press Enter to search</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+    <script src="~/site/js/vendor/jquery-library.js"></script>
+	<script src="~/site/js/vendor/bootstrap.min.js"></script>
+	<script src="~/site/js/customScrollbar.min.js"></script>
+	<script src="~/site/js/owl.carousel.js"></script>
+	<script src="~/site/js/isotope.pkgd.js"></script>
+	<script src="~/site/js/prettyPhoto.js"></script>
+	<script src="~/site/js/swiper.min.js"></script>
+	<script src="~/site/js/jquery-ui.js"></script>
+	<script src="~/site/js/countTo.js"></script>
+	<script src="~/site/js/appear.js"></script>
+	<script src="~/site/js/main.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

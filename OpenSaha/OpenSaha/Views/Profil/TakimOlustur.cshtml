@@ -1,0 +1,81 @@
+﻿@model OpenSaha.Models.Takim
+@{
+	//bool hatavar = ViewBag.hatavar;
+}
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="~/site/images/bg-pattran.png" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Oyuncu Detayları</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="/Home/Index/">Home</a></li>
+							<li class="active">Oyuncu Profili</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<main id="tg-main" class="tg-main tg-haslayout">
+			<div class="container">
+				<div class="row">
+					<div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">
+						<div class="col-sm-9 col-xs-12 pull-left">
+							<div class="tg-player-detail tg-haslayout">
+								<div class="tg-player-data tg-haslayout">
+									<div class="tg-topratedplayer tg-haslayout">
+										<div class="row">
+											<div class="col-md-12">
+												<form method="post" action="" class="register-form" id="register-form">
+													<div class="form-group">
+														<label for="phone"><i class="zmdi zmdi-phone"></i></label>
+														<input type="text" asp-for="Baslik"  placeholder="Takım Adı" />
+													</div>
+													<div class="form-group">
+														<label for="email"><i class="zmdi zmdi-email"></i></label> 
+														<input type="text" asp-for="Kadro"  placeholder="Oyuncu Sayısı" />
+													</div>
+													<div class="form-group">
+														<select asp-for="SehirId" asp-items="ViewBag.sehir"></select>
+													</div>
+													<div class="form-group">
+														<select asp-for="IlceId" asp-items="ViewBag.ilce"></select>
+													</div>
+													<div class="form-group">
+														<label for="agree-term" class="label-agree-term"><span><span></span></span>Hizmet şartlarındaki tüm ifadiyorum <a href="#" class="term-service">Hizmet Şartları</a></label>
+														<input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+													</div>
+													<div class="form-group form-button">	
+														<input type="submit" name="signup" id="signup" class="tg-btn" value="Kaydet" />
+													</div>	
+												</form>
+											</div>
+	                    				</div>
+									</div>								
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3 col-xs-12">
+							@await Component.InvokeAsync("UserMenu")
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		@section Scripts{<partial name="_ValidationScriptsPartial"/> 								
+		<script>
+			$('.Hata').click(function(){
+			Swal.fire({
+			icon:'error',
+				title:'Oops...',
+				text:'Rezervasyon oluşturabilmek için giriş yapmanız gerekiyor!',
+				footer:'<a href="">Giriş Yap?</a>'
+				});
+			});															
+		</script>			
+		}

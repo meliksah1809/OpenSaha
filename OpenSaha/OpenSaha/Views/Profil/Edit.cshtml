@@ -1,0 +1,74 @@
+﻿@model  Kullanici
+
+		<div class="tg-banner tg-haslayout">
+			<div class="tg-imglayer">
+				<img src="~/site/images/bg-pattran.png" alt="image desctription">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="tg-banner-content tg-haslayout">
+						<div class="tg-pagetitle">
+							<h1>Oyuncu Detayları</h1>
+						</div>
+						<ol class="tg-breadcrumb">
+							<li><a href="/Home/Index/">Home</a></li>
+							<li class="active">Oyuncu Profili</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<main id="tg-main" class="tg-main tg-haslayout">
+			<div class="container">
+				<div class="row">
+					<div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">
+						<div class="col-sm-9 col-xs-12 pull-left">
+							<div class="tg-player-detail tg-haslayout">
+								<div class="tg-player-data tg-haslayout">
+									<div class="tg-player-info tg-haslayout">
+										<div class="row">
+											<div class="col-sm-12 col-xs-12">
+												<div class="tg-playcontent">
+													<div class="col-md-9">
+													<a href="#" class="tg-theme-tag">Profil Güncelle</a>
+													<h3><a href="/profil/">@Model.Isim @Model.Soyisim</a></h3>
+													</div>
+													<div class="col-md-3">
+													</div>
+													@*<span class="tg-stars"><span></span></span>*@
+												</div>
+												<div class="tg-widget tg-catagories-widget">
+													<form asp-action="Edit" asp-controller="Profil">
+													<ul class="tg-postmetadata">
+														<li>Adı :</li>
+														<li><input type="text" asp-for="Isim"  class="form-control" /></li>
+														<li>Soyadı :</li>
+														<li><input type="text" asp-for="Soyisim" class="form-control" /></li>
+														<li>E-Posta :</li>
+														<li><input type="text" asp-for="Email" class="form-control" /></li>
+														<li>Telefon :</li>
+														<li><input type="text" asp-for="Telefon" class="form-control" /></li>
+														<li>Doğum Tarihi :</li>
+														<li><input type="date" asp-for="DogumTarihi" class="form-control" /></li>
+														<li>&nbsp;</li>
+														<li><button class="tg-btn" type="submit">Kaydet</button></li>
+													</ul>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+									@await Component.InvokeAsync("ProfilRandevu");								
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3 col-xs-12">
+							@await Component.InvokeAsync("UserMenu")
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		@section Scripts{<partial name="_ValidationScriptsPartial"/> 
+		}

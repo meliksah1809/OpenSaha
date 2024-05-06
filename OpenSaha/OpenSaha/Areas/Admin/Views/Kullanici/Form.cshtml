@@ -1,0 +1,91 @@
+﻿@model OpenSaha.ViewModels.Account.RegisterViewModel
+@{
+    ViewData["Title"] = "Form";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+            <div class="card card-info">
+              <div class="card-header">
+                <h3 class="card-title">Kullanıcı Ekle</h3>
+              </div>
+              <form action="~/admin/kullanici/form" method="post">
+              <div class="card-body">
+                   <div class="row">
+                      <div class="col-md-3">
+                          <label>Kullanıcı Tipi</label>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user-cog"></i></span>
+               
+                    <select class="form-control" asp-for="UserType" onchange="userType()">
+                       <option value="2">Saha Yöneticisi</option>
+                        <option value="0">Kullanıcı</option>
+                        <option value="1">Yönetici</option>
+                    </select>
+                  </div>                
+                      <label>İsim</label>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                  <input type="text" class="form-control" asp-for="Isim" placeholder="İsim">
+                </div>
+                <label>Soyisim</label>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user-plus"></i></span>
+                  <input type="text" class="form-control" asp-for="Soyisim" placeholder="Soyisim">
+                </div>                
+                      <label>Telefon</label>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                  <input type="text" class="form-control"  asp-for="Telefon" placeholder="Telefon">
+                </div>
+                      <label>E-Posta</label>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                  <input type="email" class="form-control" asp-for="Email" placeholder="Email">
+                </div>
+                        <label>Şifre</label>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                  <input type="password" class="form-control" asp-for="Password" placeholder="Şifre">
+                </div>
+               </div>
+                <div class=" col-md-2">
+                <label>Saha Sayısı</label>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-search-plus"></i></span>
+                  <input type="text" class="form-control" asp-for="SahaSayisi" placeholder="Saha Sayısı">
+                </div>
+                <label>Yönetici Sayısı</label>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user-plus"></i></span>
+                  <input type="text" class="form-control" asp-for="YoneticiSayisi" placeholder="Yönetici Sayısı">
+                </div>
+                   </div>
+                  </div>
+                 </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+                </div>
+                    </form>
+              </div>
+
+                        @section Scripts{
+                <script>
+                    function userType() {
+                        var selectBox = document.getElementById('UserType');
+                        var selectedValue = selectBox.value;
+
+                        if (selectedValue === "2") {
+                            $('#SahaSayisi').removeAttr('readonly');
+                            $('#YoneticiSayisi').removeAttr('readonly');
+                        } else {
+                            $('#SahaSayisi').attr('readonly','readonly');
+                            $('#YoneticiSayisi').attr('readonly','readonly');
+                        }
+                    }
+                </script>
+                }
+
+
+
+
+
+ 

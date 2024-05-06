@@ -1,0 +1,174 @@
+﻿@model OpenSaha.Models.Saha
+@{
+    ViewData["Title"] = "Form";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Saha Güncelle</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">DataTables</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">       
+       <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Saha</h3>
+              </div>
+              <form action="~/admin/sahalar/form" method="post">
+                <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-4">                  
+                  <div class="form-group">
+                    <label for="Baslik">Saha Adı</label> 
+                    <input type="text" class="form-control" asp-for="Baslik" placeholder="Başlık">
+                  </div>                  
+                  <div class="form-group">
+                    <input type="hidden" class="form-control" asp-for="Id" placeholder="Başlık" value="@Model.Id">
+                  </div>            
+                  <div class="form-group">
+                      <label>Kullanıcı Adı</label>
+                    @*<input type="text" class="form-control" asp-for="KullaniciId" placeholder="Başlık" value="@ViewBag.userid">*@
+                            <select class="form-control" asp-for="KullaniciId" asp-items="ViewBag.dgr"></select>
+                  </div> 
+                  <div class="form-group">
+                    <label for="Baslik">Yönetici Id</label> 
+                    <select class="form-control" asp-for="YoneticiId" asp-items="ViewBag.dgrr"></select>
+                  </div> 
+                  <div class="form-group">
+                    <label for="Aciklama">Açıklama</label> 
+                     <textarea class="form-control" rows="3" asp-for="Aciklama" placeholder="Açıklama ..."></textarea>
+                  </div>  
+                  <div class="form-group">
+                    <label for="Ozellik">Özellik</label> 
+                     <textarea class="form-control" rows="3" asp-for="Ozellik" placeholder="Özellik ..."></textarea>
+                  </div>          
+                     </div>
+                     <div class="col-md-2">
+                  <div class="form-group">
+                    <label>Saha Tipi</label> 
+                    <select class="form-control" asp-for="SahaTipi">
+                        <option value="0">Kapalı</option>
+                        <option value="1">Açık</option>
+                    </select>
+                  </div> 
+                <div class="form-group">
+                    <label for="Ozellik">İl</label> 
+					<select class="form-control" id="ddlSehirler" asp-for="SehirId" asp-items="ViewBag.Sehir" tabindex="1">
+                                            <option value="">Seçiniz</option>
+                    </select>
+				</div>
+            	<div class="form-group">
+                    <label for="Ozellik">İlçe</label> 
+					<select class="form-control" id="ddlIlceler" asp-for="IlceId" asp-items="ViewBag.Ilce" tabindex="2">
+                                            <option value="">Önce Şehir Seçiniz</option>
+                   </select>
+				</div>
+                  <div class="form-group">
+                    <label for="Baslik">Ücret</label> 
+                    <input type="text" class="form-control" asp-for="Ucret" placeholder="Ücret">
+                  </div> 
+                     </div>                
+                <div class="col-md-3">                         
+                <div class="form-group">
+                    <label>Çalışma Durumu</label> 
+                    <select class="form-control" asp-for="YirmiDortSaat" onchange="yirmiDortSaat()">
+                        <option value="0">Belirli Saatler</option>
+                        <option value="1">24 Saat</option>
+                    </select>
+                  </div> 
+                  <div class="form-group">
+                    <label for="Baslik">Saha Açılış Saati</label> 
+                    <input type="datetime-local" class="form-control" asp-for="AcilisSaat">
+                  </div>          
+                  <div class="form-group">
+                    <label for="Baslik">Saha Kapalı Saati</label> 
+                    <input type="datetime-local" class="form-control" asp-for="KapanisSaat">
+                  </div> 
+                 </div> 
+                </div>
+               </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Güncelle</button>
+                </div>
+              </form>
+            </div>            
+           </div>
+        </div>
+      </div>
+    </section>
+                                        @section Scripts{
+                                            <script>
+                                                function yirmiDortSaat() {
+                                                  var selectBox = document.getElementById('YirmiDortSaat');
+                                                  var selectedValue = selectBox.value;
+                                                  if (selectedValue === "0") {
+                                                      $('#AcilisSaat').removeAttr('readonly');
+                                                      $('#KapanisSaat').removeAttr('readonly');
+                                                  } else {
+                                                      $('#AcilisSaat').attr('readonly','readonly');
+                                                      $('#KapanisSaat').attr('readonly','readonly');
+                                                  }
+                                                }
+                                            </script>
+                                            <script type="text/javascript">
+        $(function () {
+            $("#ddlSehirler").each(function () {
+                if ($(this).find("option").length <= 1) {
+                    $(this).attr("disabled", "disabled");
+                }
+            });
+            $("#ddlSehirler").change(function () {
+                var value = 0;
+                if ($(this).val() != "") {
+                    value = $(this).val();
+                }
+                var id = $(this).attr("id");
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("SehirAjax","Home", new { Area=""})",
+                    data: { value: value, type: id },
+                    success: function (response) {
+                        switch (id) {
+                            case "ddlSehirler":
+                                DisableDropDown("#ddlIlceler");
+                                PopulateDropDown("#ddlIlceler", response.ilce);
+                                break;
+                        }
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+        });
+
+        function DisableDropDown(dropDownId) {
+            $(dropDownId).attr("disabled", "disabled");
+            $(dropDownId).empty().append('<option selected="selected" value="0">Seçiniz</option>');
+        }
+        function PopulateDropDown(dropDownId, list) {
+            if (list != null && list.length > 0) {
+                $(dropDownId).removeAttr("disabled");
+                $.each(list, function () {
+                    $(dropDownId).append($("<option></option>").val(this['value']).html(this['text']));
+                });
+            }
+        }
+    </script>
+                                      }

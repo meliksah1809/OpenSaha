@@ -1,0 +1,156 @@
+﻿@model List<OpenSaha.ViewModels.Konrtol.KontrolRezervasyonViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_KontrolLayout.cshtml";
+}
+
+<section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Rezervasyon </h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">DataTables</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+         <div class="preloader flex-column justify-content-center align-items-center">
+             <img class="animation__shake" src="~/Admin/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+         </div>
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Rezervasyonlar Listesi</h3>
+              </div>
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-md-2 offset-md-10">
+              <a href="~/kontrol/Rezervasyon/form/0" class="btn btn-block btn-primary text-end">Yeni Ekle</a>
+                      </div>
+                  </div>
+                <table id="Datatablo" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th width="5%"></th>
+                    <th>kullanici</th>
+                    <th>Saha</th>
+                    <th>Randevu Başlangıç</th>
+                    <th>Randevu Bitşi</th>
+                    <th>Randevu Durumu</th>
+                    <th>Ekipman Ücreti</th>
+                    <th>Cafe Ücreti</th>
+                    <th>Saha Ücreti</th>
+                    <th>Toplam Ücreti</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                      @foreach (var item in Model)
+                    {        
+                    <tr>
+                    <td> 
+                     @if(item.Durum == Durum.Onaylandi.ToString())
+                     {
+                   <div class="btn-group">
+                      <div class="btn btn-block btn-success"><i class="fas fa-check"></i></div>
+                  </div>
+                     }else if(item.Durum == Durum.Beklemede.ToString())                
+                     {
+                   <div class="btn-group">
+                        <a href="~/kontrol/Rezervasyon/form/@item.Id" class="btn btn-block btn-info"><i class="fas fa-edit"></i></a> 
+                    <button type="button" class="btn btn-outline-info dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu" role="menu" style=""> 
+                      <a class="dropdown-item" href="~/Kontrol/Rezervasyon/Odeme/@item.Id"><i class="fas fa-cash-register"></i> Ödeme</a>
+                     <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="~/kontrol/Rezervasyon/EkipmanRez/?id=@item.Id&yid=@item.YoneticiId&sid=@item.SahaId"><i class="fas fa-tshirt" style="color: #008a1c;"></i> Ekipman Ekle</a>    
+                     <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="~/kontrol/Rezervasyon/EkipmanDuzenle/?id=@item.Id"><i class="fas fa-tshirt" style="color: #ff0000;"></i> Ekipman Çıkar</a>    
+                     <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="~/kontrol/Rezervasyon/CafeTakip/?id=@item.Id&yid=@item.YoneticiId&sid=@item.SahaId"><i class="fas fa-coffee"style="color: #008a1c;"></i> Cafe Ekle</a> 
+                     <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="~/kontrol/Rezervasyon/CafeDuzenle/?id=@item.Id"><i class="fas fa-coffee"style="color: #ff0000;"></i> Cafe Çıkar</a> 
+                     <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="~/kontrol/Rezervasyon/Sil/?id=@item.Id"><i class="fas fa-minus-circle" style="color: #ff0000;"></i> Rezervasyon İptal</a> 
+                    </div>
+                  </div>
+                     }else if(item.Durum == Durum.Iptal.ToString())
+                     {
+                   <div class="btn-group">
+                      <div class="btn btn-block btn-danger"><i class="fas fa-minus"></i></div>
+                  </div>                  
+                     }                  
+                    <td>@item.Kullanici</td>
+                    <td>@item.Saha</td>
+                    <td>@item.RandevuBaslangic</td>
+                    <td>@item.RandevuBitis</td>
+                    <td>@item.Durum.ToString()</td>
+                    <td>@item.EkipmanUcret.ToString("N2")</td>
+                    <td>@item.CafeUcret.ToString("N2")</td>
+                    <td>@item.SahaUcret.ToString("N2")</td>
+                    <td>@item.ToplamUcret.ToString("N2")</td>
+                  </tr>
+}
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <th></th>
+                    <th>kullanıcı</th>
+                    <th>Saha</th>
+                    <th>Randevu Başlangıç</th>
+                    <th>Randevu Bitiş</th>
+                    <th>Randevu Durumu</th>
+                    <th>Ekipman Ücreti</th>
+                    <th>Cafe Ücreti</th>
+                    <th>Saha Ücreti</th>
+                    <th>Toplam Ücreti</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+           </div>
+        </div>
+      </div>
+    </section>
+@section Heads{
+<link rel="stylesheet" href="~/Admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="~/Admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="~/Admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+}
+@section Scripts{
+<script src="~/Admin/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/Admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="~/Admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="~/Admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="~/Admin/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="~/Admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="~/Admin/plugins/jszip/jszip.min.js"></script>
+<script src="~/Admin/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="~/Admin/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="~/Admin/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="~/Admin/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="~/Admin/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script>
+  $(function () {
+    $('#Datatablo').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+}

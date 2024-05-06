@@ -1,0 +1,109 @@
+﻿@model OpenSaha.Models.Takim
+@{
+    ViewData["Title"] = "TakimGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+           <div class="card card-info">
+              <div class="card-header">
+                <h3 class="card-title">Takım Güncelle</h3>
+              </div>
+              <form action="~/admin/kullanici/TakimGuncelle" method="post">
+              <div class="card-body">
+                   <div class="row">
+                      <div class="col-md-4">
+                       <label>Takım Adı</label>
+                    <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-clipboard-list"></i></span>
+                  </div>
+                  <input type="text" class="form-control" asp-for="Baslik" placeholder="Şifre">
+                </div>
+                   <input type="hidden" class="form-control" asp-for="Id" value="@Model.Id">
+                   <input type="hidden" class="form-control" asp-for="KullaniciId" value="@Model.KullaniciId">
+                <label>Şehir Adı</label>
+                   <div class="input-group mb-3">                                         
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-city"></i></span>
+                  </div>
+					<select class="form-control" id="ddlSehirler" asp-for="SehirId" asp-items="ViewBag.Sehir" tabindex="1">
+                        <option value="">Seçiniz</option>
+                    </select>
+                </div>                
+                      <label>İlçe Adı</label>
+                   <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-building"></i></span>
+                  </div>
+					<select class="form-control" id="ddlIlceler" asp-for="IlceId" asp-items="ViewBag.Ilce" tabindex="2">
+                      <option value="">Önce Şehir Seçiniz</option>
+                    </select>
+                </div>
+                      <label>Kadro Sayısı</label>
+                   <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-users"></i></span>
+                  </div>
+                  <input type="text" class="form-control" asp-for="Kadro" placeholder="Email">
+                </div>                            
+                   </div>
+                      </div>
+                    </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Güncelle</button>
+                </div>
+                    </form>
+              </div>
+
+                                         
+     @section Scripts{
+
+                                            <script type="text/javascript">
+        $(function () {
+            $("#ddlSehirler").each(function () {
+                if ($(this).find("option").length <= 1) {
+                    $(this).attr("disabled", "disabled");
+                }
+            });
+
+            $("#ddlSehirler").change(function () {
+                var value = 0;
+                if ($(this).val() != "") {
+                    value = $(this).val();
+                }
+                var id = $(this).attr("id");
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("SehirAjax","Home", new { Area=""})",
+                    data: { value: value, type: id },
+                    success: function (response) {
+                        switch (id) {
+                            case "ddlSehirler":
+                                DisableDropDown("#ddlIlceler");
+                                PopulateDropDown("#ddlIlceler", response.ilce);
+                                break;
+                        }
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+        });
+
+        function DisableDropDown(dropDownId) {
+            $(dropDownId).attr("disabled", "disabled");
+            $(dropDownId).empty().append('<option selected="selected" value="0">Seçiniz</option>');
+        }
+        function PopulateDropDown(dropDownId, list) {
+            if (list != null && list.length > 0) {
+                $(dropDownId).removeAttr("disabled");
+                $.each(list, function () {
+                    $(dropDownId).append($("<option></option>").val(this['value']).html(this['text']));
+                });
+            }
+        }
+    </script>
+   }
